@@ -1,5 +1,5 @@
 body {
-    background-color: #555;
+    background-color: #777;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,4 +8,62 @@ body {
 
 #input-array-size {
     width: 40px;
+}
+
+/* unsorted */
+#unsorted-array-container {
+    display: grid;
+    grid-template-rows: repeat(2);
+}
+#unsorted-value-container {
+    display: flex;
+    flex-direction: row;
+}
+#unsorted-index-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* counting */
+#counting-array-container {
+    display: grid;
+    grid-template-rows: repeat(2,);
+}
+#counting-value-container,
+#counting-index-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* sorted */
+#sorted-array-container {
+    display: grid;
+    grid-template-rows: repeat(2);
+}
+#sorted-value-container,
+#sorted-index-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.value-box {
+    background-color:aliceblue;
+    height: 80px;
+    width: 64px;
+    border: 2px solid black;
+    font-size: 3em;
+    text-align: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.index-box {
+    background-color: rgb(86, 128, 164);
+    height: 30px;
+    width: 64px;
+    border: 2px solid black;
+    font-size: 1.5em;
+    text-align: center;
+    align-content: center;
+    gap: 10px;
 }

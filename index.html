@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>midvejsprojekt</title>
-</head>
-<body>
-    <h1>Midtvejsprojekt</h1>
-    
-    <div>
-        <label for="input-array-size">Array size:</label>
-        <input type="number" id="input-array-size" value="10git">
-        <button>create unsorted array</button>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+        <title>midvejsprojekt</title>
+    </head>
+    <body>
+        <h1>Midtvejsprojekt</h1>
 
-    <div>
-        <p>input array / unsorted array</p>
-    </div>
+        <div>
+            <label for="input-array-size">Array size:</label>
+            <input type="number" id="input-array-size" value="10" />
+            <button id="create-array-btn">create unsorted array</button>
+            <button id="sort-btn">sort</button>
+        </div>
 
-    <div>
-        <p>count array with indexes and counts</p>
-    </div>
+        <h3>The unsorted array</h3>
+        <div id="unsorted-array-container">
+            <div id="unsorted-value-container">
+                <!-- UNSORTED VALUES -->
+            </div>
+            <div id="unsorted-index-container">
+                <!-- UNSORTED INDEXES -->
+            </div>
+        </div>
 
-    <div>
-        <p>output array / sorted array</p>
-    </div>
-    
-    <script type="module" src="./js/controller/controller.js"></script>
-</body>
+        <h3>The counting array</h3>
+
+        <div id="counting-array-container">
+            <div id="counting-value-container">
+                <!-- COUNTING VALUES -->
+            </div>
+            <div id="counting-index-container">
+                <!-- COUNTING INDEXES -->
+            </div>
+        </div>
+
+        <h3>The sorted array</h3>
+        <div id="sorted-array-container">
+            <div id="sorted-value-container">
+                <!-- SORTED VALUES -->
+            </div>
+            <div id="sorted-index-container">
+                <!-- SORTED INDEXES -->
+            </div>
+        </div>
+
+        <script type="module" src="./js/controller/controller.js"></script>
+    </body>
 </html>
