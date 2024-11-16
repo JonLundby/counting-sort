@@ -1,4 +1,3 @@
-
 export function initView() {
     console.log("hello from VIEW");
 }
@@ -8,11 +7,11 @@ export function createVisualUnsortedArray(model) {
     const containerIndex = document.querySelector("#unsorted-index-container");
     containerValue.innerHTML = "";
     containerIndex.innerHTML = "";
-    
+
     let i = 0;
     for (const element of model) {
-        const valueBox = document.createElement("div")
-        const indexBox = document.createElement("div")
+        const valueBox = document.createElement("div");
+        const indexBox = document.createElement("div");
 
         valueBox.classList.add("value-box");
         indexBox.classList.add("index-box");
@@ -20,9 +19,8 @@ export function createVisualUnsortedArray(model) {
         indexBox.textContent = i;
         i++;
 
-
-        containerValue.insertAdjacentElement("beforeend", valueBox)
-        containerIndex.insertAdjacentElement("beforeend", indexBox)
+        containerValue.insertAdjacentElement("beforeend", valueBox);
+        containerIndex.insertAdjacentElement("beforeend", indexBox);
     }
 }
 
@@ -31,7 +29,7 @@ export function createVisualCountingArray(model) {
     const containerIndex = document.querySelector("#counting-index-container");
     containerValue.innerHTML = "";
     containerIndex.innerHTML = "";
-    
+
     let i = 0;
     for (const element of model) {
         const valueBox = document.createElement("div");
@@ -68,5 +66,13 @@ export function createVisualSortedArray(model) {
         containerValue.insertAdjacentElement("beforeend", valueBox);
         containerIndex.insertAdjacentElement("beforeend", indexBox);
     }
-    
+}
+
+export function updateCountingArray(model) {
+    const visualCountingIndexes = document.querySelectorAll("#counting-value-container .value-box");
+
+    for (let i = 0; i < model.length; i++) {
+        visualCountingIndexes[i].textContent = model[i]        
+    }
+
 }

@@ -6,7 +6,8 @@ body {
     align-items: center;
 }
 
-#input-array-size {
+#input-array-size,
+#max-number-value {
     width: 40px;
 }
 
