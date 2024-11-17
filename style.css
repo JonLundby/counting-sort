@@ -11,6 +11,10 @@ body {
     width: 40px;
 }
 
+#timer-input {
+    width: 60px;
+}
+
 /* unsorted */
 #unsorted-array-container {
     display: grid;
@@ -67,4 +71,26 @@ body {
     text-align: center;
     align-content: center;
     gap: 10px;
+}
+
+.highlight{
+    animation: flash;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+    0% {
+        background-color:aliceblue;
+    }
+    50% {
+        background-color:cyan
+    }
+    100% {
+        background-color:aliceblue;
+    }
+}
+
+.hidden {
+    display: none;
 }
