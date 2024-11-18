@@ -1,6 +1,7 @@
 "use strict";
-
 import * as view from "../view/view.js";
+
+export { timer };
 
 window.addEventListener("load", initApp);
 
@@ -14,7 +15,10 @@ function initApp() {
     // eventlisteners
     document.querySelector("#create-array-btn").addEventListener("click", createInitialArrayModels);
     document.querySelector("#sort-btn").disabled = true;
-    document.querySelector("#sort-btn").addEventListener("click", countingPhase);
+    document.querySelector("#sort-btn").addEventListener("click", () => {
+        document.querySelector("#sort-btn").disabled = true;
+        countingPhase();
+    });
 
     timer = document.querySelector("#timer-input").value;
     document.querySelector("#timer-input").addEventListener("change", () => {
@@ -30,10 +34,9 @@ function createInitialArrayModels() {
     // nulstil arrays
     unsortedArr = [];
     countingArr = [];
-
     sortedArr = [];
 
-    // push nye random værdier mellem 0-7 til det unsortedArr
+    // push nye random værdier til det unsortedArr
     for (let i = 0; i < size; i++) {
         const randomValue = Math.floor(Math.random() * inputValueMax);
         unsortedArr.push(randomValue);
@@ -57,8 +60,8 @@ function createInitialArrayModels() {
     document.querySelector("#sort-btn").disabled = false;
 }
 
+// optælling af værdier
 async function countingPhase() {
-    // optælling af værdier
     for (let i = 0; i < unsortedArr.length; i++) {
         let countingArrIndex = unsortedArr[i];
 
@@ -71,8 +74,8 @@ async function countingPhase() {
     cumulativePhase();
 }
 
+// kumulativ opsummering af countingArr
 async function cumulativePhase() {
-    // kumulativ opsummering af countingArr
     for (let i = 1; i < countingArr.length; i++) {
         countingArr[i] += countingArr[i - 1];
 
@@ -83,18 +86,14 @@ async function cumulativePhase() {
     sortPhase();
 }
 
+// sortering af usorterede værdier gennem countingArr og indexes
 async function sortPhase() {
-    // sortering af usorterede værdier gennem countingArr og indexes
     for (let i = unsortedArr.length - 1; i >= 0; i--) {
         let countingArrIndex = unsortedArr[i];
-        let sortedArrIndex; // bliver senere sat til at være en værdi fra countinArr baseret på en værdi fra unsortedArr, først laves opdatering af modellen
+        let sortedArrIndex = countingArr[unsortedArr[i]] - 1;
 
-        // finder værdien af et index i counting array baseret på en værdi fra unsorted array
         sortedArr[countingArr[unsortedArr[i]] - 1] = unsortedArr[i];
-        // trækker 1 fra værdien i countingArr
         countingArr[unsortedArr[i]] = countingArr[unsortedArr[i]] - 1;
-        
-        sortedArrIndex = countingArr[unsortedArr[i]];
 
         view.updateVisualCountingArray(countingArr, countingArrIndex);
         view.updateVisualSortedArray(sortedArr, sortedArrIndex);

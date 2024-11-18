@@ -84,13 +84,9 @@ body {
         background-color:aliceblue;
     }
     50% {
-        background-color:cyan
+        background-color:rgb(16, 156, 156)
     }
     100% {
         background-color:aliceblue;
     }
-}
-
-.hidden {
-    display: none;
 }

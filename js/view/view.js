@@ -1,4 +1,4 @@
-import { sleep } from "../controller/controller.js";
+import { timer } from "../controller/controller.js";
 
 export function initView() {
     console.log("hello from VIEW");
@@ -72,22 +72,14 @@ export function createVisualSortedArray(model) {
 
 export function updateVisualCountingArray(model, i) {
     const visualCountingIndexes = document.querySelectorAll("#counting-value-container .value-box");
+    const visualBox = visualCountingIndexes[i]
 
-    // for (let i = 0; i < model.length; i++) {
-    visualCountingIndexes[i].textContent = model[i];
-    // }
+    visualBox.textContent = model[i];
 }
 
 export function updateVisualSortedArray(model, i) {
     const visualSortedIndexes = document.querySelectorAll("#sorted-value-container .value-box");
-    console.log(i);
+    const visualBox = visualSortedIndexes[i]
     
-
-    // for (let i = 0; i < model.length; i++) {
-    visualSortedIndexes[i].textContent = model[i];
-    // }
+    visualBox.textContent = model[i];
 }
-
-export function addHighlight(VisualBox) {}
-
-export function removeHighlight(VisualBox) {}
