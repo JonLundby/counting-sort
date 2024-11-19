@@ -75,18 +75,18 @@ body {
 
 .highlight{
     animation: flash;
-    animation-duration: 900ms;
-    animation-iteration-count: infinite;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
 }
 
 @keyframes flash {
     0% {
         background-color:aliceblue;
     }
-    50% {
+    100% {
         background-color:rgb(16, 156, 156)
     }
-    100% {
+    /* 100% {
         background-color:aliceblue;
-    }
+    } */
 }

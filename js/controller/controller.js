@@ -1,8 +1,6 @@
 "use strict";
 import * as view from "../view/view.js";
 
-export { timer };
-
 window.addEventListener("load", initApp);
 
 let unsortedArr = [];
@@ -62,6 +60,7 @@ function createInitialArrayModels() {
 
 // optælling af værdier
 async function countingPhase() {
+    document.querySelector("#create-array-btn").disabled = true;
     for (let i = 0; i < unsortedArr.length; i++) {
         let countingArrIndex = unsortedArr[i];
 
@@ -99,6 +98,8 @@ async function sortPhase() {
         view.updateVisualSortedArray(sortedArr, sortedArrIndex);
         await sleep(timer);
     }
+
+    document.querySelector("#create-array-btn").disabled = false;
 }
 
 // en sleep/helper funktion

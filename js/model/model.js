@@ -1,1 +1,9 @@
-// lav evt static eller dynamic array
+// export default class model {
+//     constructor() {
+//         this.unsortedArr = [];
+//         this.countingArr = [];
+//         this.sortedArr = [];
+//         this.maxRandomValue = 0;
+
+//     }
+// }

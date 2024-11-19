@@ -1,5 +1,3 @@
-import { timer } from "../controller/controller.js";
-
 export function initView() {
     console.log("hello from VIEW");
 }
@@ -72,14 +70,14 @@ export function createVisualSortedArray(model) {
 
 export function updateVisualCountingArray(model, i) {
     const visualCountingIndexes = document.querySelectorAll("#counting-value-container .value-box");
-    const visualBox = visualCountingIndexes[i]
+    const visualBox = visualCountingIndexes[i];
 
     visualBox.textContent = model[i];
 }
 
 export function updateVisualSortedArray(model, i) {
     const visualSortedIndexes = document.querySelectorAll("#sorted-value-container .value-box");
-    const visualBox = visualSortedIndexes[i]
-    
+    const visualBox = visualSortedIndexes[i];
+
     visualBox.textContent = model[i];
 }
