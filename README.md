@@ -1,3 +1,3 @@
 # Counting Sort (MidtvejsProjekt)
 
-link til deployet udgave her...
+https://jonlundby.github.io/counting-sort/
